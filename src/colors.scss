@@ -1,0 +1,16 @@
+$colors: (
+  background: #212121,
+  primary: #039d5b,
+);
+
+$background: (
+  primary: #212121,
+  secondary: #535353,
+  overlay: #424242,
+  surface: #272727,
+);
+
+$gradients: (
+  secondary: linear-gradient(90deg, rgba(24, 24, 24, 1) 0%, rgba(78, 69, 63, 1) 60%),
+  primary: linear-gradient(90deg, rgba(24, 24, 24, 1) 0%, rgba(7, 145, 125, 1) 60%),
+);

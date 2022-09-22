@@ -1,0 +1,17 @@
+.button {
+  all: unset;
+  border-radius: 5px;
+  background-color: var(--background-primary);
+  border: 1px solid var(--background-secondary);
+  text-align: center;
+  padding: 1px 15px;
+  user-select: none;
+
+  &:hover {
+    filter: brightness(150%);
+  }
+
+  &:active {
+    filter: brightness(200%);
+  }
+}

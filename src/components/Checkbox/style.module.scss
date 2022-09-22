@@ -1,0 +1,35 @@
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  user-select: none;
+
+  .checkbox {
+    appearance: none;
+    background-color: var(--background-overlay);
+    border: 1px solid var(--background-secondary);
+    border-radius: 4px;
+    width: 16px;
+    height: 16px;
+    position: relative;
+
+    &:hover {
+      filter: brightness(150%);
+    }
+
+    &:checked {
+      background: var(--background-overlay);
+
+      &:after {
+        position: absolute;
+        content: '\2714';
+        color: var(--color-primary);
+        top: -2px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        vertical-align: middle;
+      }
+    }
+  }
+}
