@@ -12,6 +12,7 @@ export default function Window(props: WindowProps) {
   const [active, setActive] = React.useState(false);
   const ref = React.useRef<HTMLDivElement>(null);
   const refHeader = React.useRef<HTMLDivElement>(null);
+  const bodyRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     const handleWindowClick = (e: MouseEvent) => {
@@ -41,12 +42,25 @@ export default function Window(props: WindowProps) {
       }
     };
 
+    const onResize = new ResizeObserver((entries) => {
+      const { width, height } = entries[0].contentRect;
+      if (ref.current) {
+        ref.current.style.width = width + 'px';
+        ref.current.style.height = height + 'px';
+      }
+    });
+
     window.addEventListener('click', handleWindowClick);
     refHeader.current?.addEventListener('mousedown', dragEvent);
+
+    if (bodyRef.current) onResize.observe(bodyRef.current);
 
     return () => {
       window.removeEventListener('click', handleWindowClick);
       refHeader.current?.removeEventListener('mousedown', dragEvent);
+      if (bodyRef.current) {
+        onResize.unobserve(bodyRef.current);
+      }
     };
   }, []);
 
@@ -59,8 +73,11 @@ export default function Window(props: WindowProps) {
         {props.collapsible && <button></button>}
         <span>{props.title}</span>
       </div>
-      <div className={classNames(style.window__body, active && style.window__body__active)}>
-        {props.children}
+      <div
+        className={classNames(style.window__body, active && style.window__body__active)}
+        ref={bodyRef}
+      >
+        <div className={classNames(style.window__body__wrapper)}>{props.children}</div>
       </div>
     </div>
   );
