@@ -14,7 +14,7 @@
     bottom: 0;
     pointer-events: none;
     z-index: 1;
-    border: 1px solid var(--background-secondary);
+    border: 1px solid var(--gmui-window-border);
     border-bottom: none;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
@@ -35,11 +35,11 @@
       height: 90%;
       content: '';
       border-radius: inherit;
-      background: var(--gradients-secondary);
+      background: var(--gmui-window-header-bg);
     }
 
     &__active::before {
-      background: var(--gradients-primary);
+      background: var(--gmui-window-header-bg-active);
     }
 
     span {
@@ -58,7 +58,7 @@
 
     width: 100%;
     height: 100%;
-    background-color: var(--background-surface);
+    background-color: var(--gmui-window-bg);
 
     &__wrapper {
       padding: 1em;
@@ -74,11 +74,11 @@
       bottom: 0;
       pointer-events: none;
       z-index: 2;
-      border: 1px solid var(--background-secondary);
+      border: 1px solid var(--gmui-window-border);
     }
 
     &__active::before {
-      border-color: var(--color-primary);
+      border-color: var(--gmui-window-border-active);
     }
   }
 }
