@@ -3,6 +3,7 @@
   "files": {
     "includes": [
       "**",
+      "!demo-static",
       "!dist",
       "!node_modules",
       "!storybook-static",

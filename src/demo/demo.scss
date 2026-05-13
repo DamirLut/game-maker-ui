@@ -6,3 +6,61 @@ body {
   background-size: cover;
   overflow: hidden;
 }
+
+.demo-page {
+  min-height: 100vh;
+  color: #fff;
+}
+
+.demo-page > div:nth-child(1) {
+  top: 56px;
+  left: 56px;
+}
+
+.demo-page > div:nth-child(2) {
+  top: 96px;
+  left: 620px;
+  width: 360px;
+}
+
+.demo-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 320px;
+}
+
+.demo-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.demo-section h2 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.demo-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 16px;
+}
+
+.demo-icons {
+  color: var(--gmui-checkbox-check-color);
+}
+
+.demo-copy {
+  max-width: 280px;
+  font-size: 13px;
+  line-height: 19px;
+}
