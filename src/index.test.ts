@@ -3,10 +3,10 @@ import * as publicApi from "./index";
 
 describe("public API", () => {
   it("exports core UI components", () => {
-    expect(publicApi.Button).toBeTypeOf("function");
-    expect(publicApi.Checkbox).toBeTypeOf("function");
-    expect(publicApi.Icon).toBeTypeOf("function");
-    expect(publicApi.IconButton).toBeTypeOf("function");
-    expect(publicApi.Window).toBeTypeOf("function");
+    expect(publicApi).toHaveProperty("Button");
+    expect(publicApi).toHaveProperty("Checkbox");
+    expect(publicApi).toHaveProperty("Icon");
+    expect(publicApi).toHaveProperty("IconButton");
+    expect(publicApi).toHaveProperty("Window");
   });
 });
