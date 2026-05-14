@@ -5,11 +5,26 @@
   justify-content: center;
   box-sizing: border-box;
   border-radius: 5px;
-  background-color: var(--gmui-button-bg);
-  border: 1px solid var(--gmui-button-border);
+  border: 1px solid transparent;
   color: inherit;
   user-select: none;
-  transition: background-color 100ms ease-in-out;
+
+  cursor: pointer;
+
+  transition:
+    background-color 100ms ease-in-out,
+    border-color 100ms ease-in-out;
+
+  &:disabled {
+    & > svg {
+      opacity: 0.5;
+    }
+  }
+}
+
+.solid {
+  background-color: var(--gmui-button-bg);
+  border-color: var(--gmui-button-border);
 
   &:hover {
     background-color: var(--gmui-button-bg-hover);
@@ -21,10 +36,21 @@
 
   &:disabled {
     background-color: var(--gmui-button-bg-disabled);
+  }
+}
 
-    & > svg {
-      opacity: 0.5;
-    }
+.ghost {
+  background-color: transparent;
+  border-color: transparent;
+
+  &:active {
+    background-color: var(--gmui-button-bg-active);
+    border-color: var(--gmui-button-border);
+  }
+
+  &:disabled {
+    background-color: transparent;
+    border-color: transparent;
   }
 }
 

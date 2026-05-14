@@ -12,15 +12,9 @@ body {
   color: #fff;
 }
 
-.demo-page > div:nth-child(1) {
-  top: 56px;
-  left: 56px;
-}
-
-.demo-page > div:nth-child(2) {
-  top: 96px;
-  left: 620px;
-  width: 360px;
+.demo-window {
+  top: 0;
+  left: 0;
 }
 
 .demo-stack {
@@ -37,6 +31,7 @@ body {
 }
 
 .demo-section h2 {
+  margin: 0;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
@@ -60,7 +55,14 @@ body {
 }
 
 .demo-copy {
+  margin: 0;
   max-width: 280px;
   font-size: 13px;
   line-height: 19px;
+}
+
+.demo-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }

@@ -24,6 +24,10 @@ const meta = {
       control: "select",
       options: ["sm", "md", "lg"],
     },
+    variant: {
+      control: "select",
+      options: ["solid", "ghost"],
+    },
   },
 } satisfies Meta<typeof IconButton>;
 
@@ -53,6 +57,12 @@ export const Sizes: Story = {
       />
     </div>
   ),
+};
+
+export const Ghost: Story = {
+  args: {
+    variant: "ghost",
+  },
 };
 
 export const Disabled: Story = {

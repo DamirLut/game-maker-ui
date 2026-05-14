@@ -4,6 +4,7 @@ import { cn } from "#lib/classname";
 import Style from "./icon-button.module.scss";
 
 export type IconButtonSize = UiSize;
+export type IconButtonVariant = "solid" | "ghost";
 
 export type IconButtonProps = Omit<
   ButtonHTMLAttributes<HTMLButtonElement>,
@@ -12,16 +13,21 @@ export type IconButtonProps = Omit<
   "aria-label": string;
   icon: ReactNode;
   size?: IconButtonSize;
+  variant?: IconButtonVariant;
 };
 
 export function IconButton({
   icon,
   size = "md",
+  variant = "solid",
   className,
   ...props
 }: IconButtonProps) {
   return (
-    <button className={cn(Style.button, Style[size], className)} {...props}>
+    <button
+      className={cn(Style.button, Style[size], Style[variant], className)}
+      {...props}
+    >
       {icon}
     </button>
   );
